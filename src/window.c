@@ -55,7 +55,6 @@
 #include "treeview_helper.h"
 #include "user.h"
 #include "window.h"
-#include "rust_functions.h"
 
 /** Show the splash screen window. */
 void
@@ -104,8 +103,26 @@ window_load_hint_number(void)
     printf("window_load_hint_number\n");
 #endif
 
-    int hint_number = load_hint_number();
-    counters[COUNT_HINT_NUMBER] = hint_number;
+    gchar filename[SMALL];
+    gchar dir[SMALL];
+    FILE *fil;
+    
+    file_get_bygfoot_dir(dir);
+
+    sprintf(filename, "%s%shint_num",
+	    dir, G_DIR_SEPARATOR_S);
+
+    fil = fopen(filename, "r");
+
+    if(fil == NULL)
+    {
+	counters[COUNT_HINT_NUMBER] = 0;
+	return;
+    }
+
+    fscanf(fil, "%d", &counters[COUNT_HINT_NUMBER]);
+
+    fclose(fil);
 
     if(counters[COUNT_HINT_NUMBER] < 0 ||
        counters[COUNT_HINT_NUMBER] >= hints.list->len)
@@ -124,7 +141,23 @@ window_save_hint_number(void)
     printf("window_save_hint_number\n");
 #endif
 
-    save_hint_number(counters[COUNT_HINT_NUMBER]);
+    gchar filename[SMALL];
+    gchar dir[SMALL];
+    FILE *fil;
+
+    file_get_bygfoot_dir(dir);
+
+    sprintf(filename, "%s%shint_num",
+	    dir, G_DIR_SEPARATOR_S);
+
+    fil = fopen(filename, "w");
+
+    if(fil == NULL)
+	return;
+
+    fprintf(fil, "%d", counters[COUNT_HINT_NUMBER]);
+
+    fclose(fil);
 }
 
 /** Show the window with the progress bar,

@@ -3,23 +3,6 @@ set(CMAKE_LEGACY_CYGWIN_WIN32 0)
 
 set(BYGFOOT_VERSION "2.3.4" CACHE STRING "Bygfoot version suffix")
 
-if (CMAKE_BUILD_TYPE STREQUAL "Release")
-    set(CARGO_CMD cargo build --release)
-    set(TARGET_DIR "target/release")
-else ()
-    set(CARGO_CMD cargo build)
-    set(TARGET_DIR "target/debug")
-endif ()
-
-set(LIBBF_SO "${CMAKE_CURRENT_BINARY_DIR}/${TARGET_DIR}/libbf.so")
-
-add_custom_target(libbygfoot ALL
-    COMMENT "Compiling Rust library"
-    COMMAND CARGO_TARGET_DIR=${CMAKE_CURRENT_BINARY_DIR}/target ${CARGO_CMD} 
-    COMMAND cp ${LIBBF_SO} ${CMAKE_CURRENT_BINARY_DIR}
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-)
-
 project("bygfoot" C)
 
 find_package(PkgConfig REQUIRED)
@@ -45,7 +28,7 @@ include(GNUInstallDirs)
 add_definitions("-DPACKAGE_DATA_DIR=\"${CMAKE_INSTALL_FULL_DATADIR}\"")
 add_definitions("-DPACKAGE=\"${PROJECT_NAME}\"")
 add_definitions("-DVERS=\"${BYGFOOT_VERSION}\"")
-link_directories(${CMAKE_CURRENT_SOURCE_DIR})
+link_directories ("./")
 
 add_executable(bygfoot WIN32
     src/bet.c src/bet.h src/bet_struct.h
@@ -138,7 +121,7 @@ add_executable(bygfoot WIN32
 # Newer versions of gcc and clang enable fno-common by default and
 # this won't work with the global variables in bygfoot.
 target_compile_options(bygfoot PRIVATE
-	               -Wno-deprecated-declarations
+                   -Wno-deprecated-declarations
                    -DGTK_DISABLE_SINGLE_INCLUDES
                    -DGDK_DISABLE_DEPRECATED
                    -DGTK_DISABLE_DEPRECATED
