@@ -21,20 +21,28 @@
 
   <teams>
     <team>
-      <team_name>Ekranas</team_name>
-<def_file>lithuania_ekranas</def_file>
+      <team_name>A. Klaipeda</team_name>
     </team>
     <team>
-      <team_name>Banga</team_name>
-<def_file>lithuania_banga</def_file>
+      <team_name>E. Panevezys</team_name>
+    </team>
+    <team>
+      <team_name>Kaunas</team_name>
     </team>
     <team>
       <team_name>Šiauliai</team_name>
-<def_file>lithuania_siauliai</def_file>
     </team>
     <team>
-      <team_name>Suduva</team_name>
-<def_file>lithuania_suduva</def_file>
+      <team_name>Šilutė</team_name>
+    </team>
+    <team>
+      <team_name>S. Marijampole</team_name>
+    </team>
+    <team>
+      <team_name>V. Vilnius</team_name>
+    </team>
+    <team>
+      <team_name>Ž. Vilnius</team_name>
     </team>
   </teams>
 </league>

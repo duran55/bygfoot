@@ -24,25 +24,52 @@
   
   <teams>
     <team>
-      <team_name>Levski Sofia</team_name>
-      <def_file>bulgaria_levski</def_file>
+      <team_name>C. Sofia</team_name>
     </team>
     <team>
-      <team_name>CSKA Sofia</team_name>
-     <def_file>bulgaria_sofia</def_file>
-    </team>
-  
-    <team>
-      <team_name>Litex Lovech</team_name>
-     <def_file>bulgaria_litex</def_file>
+      <team_name>Le. Sofia</team_name>
     </team>
     <team>
-      <team_name>Locomotiv Plovdiv</team_name>
-     <def_file>bulgaria_plovdiv</def_file>
+      <team_name>L. Lovech</team_name>
     </team>
     <team>
-      <team_name>Chernomorets</team_name>
-     <def_file>bulgaria_cherno</def_file>
+      <team_name>Sliven</team_name>
+    </team>
+    <team>
+      <team_name>Lo. Sofia</team_name>
+    </team>
+    <team>
+      <team_name>C. M. Varna</team_name>
+    </team>
+    <team>
+      <team_name>L. Mezdra</team_name>
+    </team>
+    <team>
+      <team_name>C. Burgas</team_name>
+    </team>
+    <team>
+      <team_name>S. Sofia</team_name>
+    </team>
+    <team>
+      <team_name>M. Pernik</team_name>
+    </team>
+    <team>
+      <team_name>P. Blagoevgrad</team_name>
+    </team>
+    <team>
+      <team_name>L. Plovdiv</team_name>
+    </team>
+    <team>
+      <team_name>B. Plovdiv</team_name>
+    </team>
+    <team>
+      <team_name>Vihren</team_name>
+    </team>
+    <team>
+      <team_name>S. Varna</team_name>
+    </team>
+    <team>
+      <team_name>B. Petrich</team_name>
     </team>
   </teams>
 </league>
