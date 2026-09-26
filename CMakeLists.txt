@@ -154,6 +154,5 @@ add_custom_command(TARGET bygfoot POST_BUILD
 		   ${CMAKE_BINARY_DIR}/support_files)
 
 set(CPACK_PACKAGE_VERSION ${BYGFOOT_VERSION} CACHE STRING "cpack package vesion")
-set(BYGFOOT_VERSION "2.3.4" CACHE STRING "Bygfoot version suffix")
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Bygfoot Developers")
 include(CPack)

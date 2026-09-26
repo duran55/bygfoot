@@ -46,9 +46,12 @@
 #include "debug.h"
 
 /**
- * Program version number and year (copyright).
+ * Program copyright year.
+ *
+ * The version number is supplied at build time by CMake as -DVERS="<version>"
+ * (see CMakeLists.txt, BYGFOOT_VERSION); do not hardcode it here or the two
+ * will drift apart.
  */
-#define VERS "2.3.3"
 #define YEAR "2005 - 2011"
 
 /** Home dir name */
